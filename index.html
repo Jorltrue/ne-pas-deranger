@@ -168,7 +168,7 @@ tr.hl td{background:var(--laiton-2)}
 <div class="toast" id="toast" role="status" hidden></div>
 <script>
 "use strict";
-const SECRETS = {"q": {"M1": ["3bc5051a612280302609aed86a42b5fa548fdc39c75453d96dcbbd63df93bc5a", "5e3d662a029895dd8f95eeb2ce76f50dee388466f0127c76b9b5d72e74bc800b", "5d1f1eeb98649a9e9a4f6b6899941eb87d8f6f54e31c30873ee077f5a340f1b3", "c3f4002adf63f405c2969ec1624c034b9eedb8d760b9f1251c6bb238df82b0f9", "dbd79ffaa0789ba460e9ee2d2cce8c4081fd0c188948c68bdcacd3e6251bd50d"], "M2a": ["779355abe5202668a83e5e0d800452823686ab89b91026a0bc26b4532f664e26"], "M2b": ["50ec531e39210f20c28102517a7f49e848ca123bede6365c30bbcd5c2b9e859c"], "M3a": ["9f4ea8d6b797cdabc4ce2df683ae1aa68313c7355a20379f3901c176313472a8"], "M3b": ["cb969fbf4188b5166ad50d5be908c1a93572206ef42993d235a2a1e8c74a71ba"], "M4a": ["9c4d3ad1144d9fd14419d038167ecd178add078aa4b54b38832e0310003463f5", "cadc4aaf98beaa030bbdff05f1bb8ff3fa489362e29a58850530f5244339402d", "50043cba6ec3b1560ccc0f5712f668094532d8fd8e3f81db46be70cbd5971fa5"], "M4b": ["a3a8272388804973a6a77d93a42c3a9978c992c8fb3a8032f514d040a8e578db"], "M5": ["60881182308630a2b122ebc9444362b7d57a6e12b69d15c0da5eb0e05151cd68"], "M6": ["2efbc3fbf3a27387461212769b3fe72f723f3cafb7876720583b07d6e4376689"], "PIN": ["aa3c2078f6b7f64b3f0b6f92b1d9e5c488977a2ba23181629b7794151b012d45"]}, "champ": {"qui": "ce7beebd124f196677e4577698c63c71d7b518dbf21f1ebbfe17c850fa2c7a81", "ou": "d2725475094f7691e50aaabab707c644d1a5b8a8110b43ed76068b96da5d15ac", "quand": "37e9a5ec854c7f7e0983b11b898978e8c0da759b3b908486ee7899b12bb6d648"}, "final": "67262148c9b1e0b394fd1b2e4b47d7d5ac7dcebb0cd91ab372892cb695e856f5", "enc": {"portes": "jLwBNpgrc8fizziAKYvk5tamcvfcXtMpdWxeu+mnTvH6g+t9qOO5tqhVU735OTa5RSOi6vgEAe3JXRVK/e6+4ILZLrdA51CzjUEktXKyNaRDcPPEHKsZQ25kiIkeJ22Mo5JaNe9yDN+uiWDPGP+9jtWechuGccXZsdJEr3SW84SCjLS1ytTrkuVFRqj5NphBwafBs8zY84zGlg76fqbzjZmBCrrT52ML1Cth4F810O7RU6rb7/7R0FKMj8XcPFSf5InbNmsgZfIwzamkOUMCegBz2/e/pdj85cIGa6F62+nNiLDl/TzKblPf+iMF4gbmtnKN440csVW1JQXyC4THfgZn+T/vF6IO2Z9IQ0F2cJOjQ/oXNVUh/E5rdaiDPmxPLqbo4OSyZxltkH3YJnLW23lFVP1O0XwI8vSfhbTekB62ntg13fFgxBx+OB/PNAIPDs+r9UBiOimHuFwC2aFQ9VbIp3qY7hgPuzIiK5xeBjiRwTylqZzP1TaunBXR3u69QdoI9VNaYu+SnAZuUHX54GbvR/ntsVlZkqBjq3ktS1n78Wwd8C8z4EhPzHlpjahxJC/7fc6660piwdejYIa1j80uFqXhbnmoyN2iG8PiENGFmv9GoTEcUcQtuW9ETHt6pfarMfXsyoHum80IyORZuPa6YKcdJC4Ez91fN9xqwst9v1tc20Hu5KhpgFqaAhp1Cw6flbwD2WojTesRlocKdp9S3k9JxYxro0Foeef5q41jeMRutpcK1Z6FWkbdnOqqMRfFW1s9BwCqeOu+51BoAwX1P8eVD059jkDB9iCf8FVrNS4=", "fragOu": "jKwJItQtIaytyG3HLp27vYDqRuuICp1Bc3VNraa1GP+23vg45cak5uJ2HfPqPG3rRWteHr1rswGAQlpC6KPA4NKELeTgIg3vihQ47y+nILcYLejfW/Q0EUQ224pRKXXfyMddZ6A7Ec/kev/VRenpYhWOKUvcNbLnUh5UviSG+4WfkPegjom/h+wZdr+sasBPm+nT/6+JptWW3SP6Krz52IGRD6Ka52wPhilhqUM2wOmDH6fc7bbT1VGQjSZHKx7G657XaTptY+Ug59ixIhBBfw0gxq+9oZO/+5Ade1zjzb2J0uCvqSiVIFOboRRN6gekqjDM8cpSXYinflfzT8ryYwd88nHlTOhE29UnQwA8ZdDgQ/pEego99FN/ZOCBPX0Kb/lZHeL8IQ02xGGTM3ibxyBeUrEhzWsbvqaOlaqKwwTmwZZ+ia9+xAokSZ8+dVJNH8LqqhUscH3RsVxZ36G8Yln2/FDUoA9Gqc8=", "final": "KxyjFB/nXaUTmPRx89SByFxQy1Aw5tNaBeRCj6ES2Ftu8t3fVkWEmxfzeiysxIDnq8V+8cNU2pLZoHHOA/Q6/YVUFj2aCUbsX/Pri/pd+3P39L/s8KMNmoMO3DuallJwSXjHipy0RmDhxbd1wEfD8INq4WN4DldJkhKLMn/7BCbVkMsm4KccASNw6OcLRCI40TOvJJfSY30Qi6XkmNVR6qNGEyFAiDXRPOydhFBnuVLEnENh0ZQ39952ZRBeF1yKs2IlEIPTmgRmqMENdysvmkrf/gahwmiftppYFbqM2Oxt/lsSV3QbAsR2e2BLbL4nWVQ7wOPIG05ohS2Cbn/S5KbzU/DRmB0oR1r+uXhZkBPz4Rg8fwRtcANIvbgSTNoHXbU8arizTVu4+Yo+M1GrocoufTYZSJdxXbXPSRyzbWWJuDbh2XanCJD4Nyuyfonvs4t78WRPJJuM1H+mcy0k3czIphcj0L2bfo3lZWc8uUSGeHSwSCnOeGd8/ACfjuYMFK68Og=="}};
+const SECRETS = {"q": {"M1": ["3bc5051a612280302609aed86a42b5fa548fdc39c75453d96dcbbd63df93bc5a", "5e3d662a029895dd8f95eeb2ce76f50dee388466f0127c76b9b5d72e74bc800b", "5d1f1eeb98649a9e9a4f6b6899941eb87d8f6f54e31c30873ee077f5a340f1b3", "c3f4002adf63f405c2969ec1624c034b9eedb8d760b9f1251c6bb238df82b0f9", "dbd79ffaa0789ba460e9ee2d2cce8c4081fd0c188948c68bdcacd3e6251bd50d"], "M2a": ["779355abe5202668a83e5e0d800452823686ab89b91026a0bc26b4532f664e26"], "M2b": ["50ec531e39210f20c28102517a7f49e848ca123bede6365c30bbcd5c2b9e859c"], "M3a": ["9f4ea8d6b797cdabc4ce2df683ae1aa68313c7355a20379f3901c176313472a8"], "M3b": ["cb969fbf4188b5166ad50d5be908c1a93572206ef42993d235a2a1e8c74a71ba"], "M4a": ["9c4d3ad1144d9fd14419d038167ecd178add078aa4b54b38832e0310003463f5", "cadc4aaf98beaa030bbdff05f1bb8ff3fa489362e29a58850530f5244339402d", "50043cba6ec3b1560ccc0f5712f668094532d8fd8e3f81db46be70cbd5971fa5"], "M4b": ["a3a8272388804973a6a77d93a42c3a9978c992c8fb3a8032f514d040a8e578db"], "M5a": ["2fdffb8686d3cd9ddc6e89240a2acf01c6ab5dc52e25345a8b51439a6eec4605"], "M5b": ["793f382f5ee5433a9fe58f035db1c7305843dbf0ad819f927c51378d19cc7a71"], "M6": ["9b624ef6423bbfa3c879083c9062faaef94fc41c73f227ba23b5dc656f1dee48"], "M7a": ["6e35fb45bedde065be0da7278def98735e36a90d8a7ed01edf360aef5cb3abbd"], "M7b": ["8e7bb5d89bb2d6e0240840648dcf103982d763358860d3b085678094e35b64c2"], "M8": ["13e202012e8ac59f2311128f38e4a38c3c64f08acb168b94b62220f8c9eefb68"], "M9": ["d5a4912f12625d6854ed5f5318d1af629d4886fdb5b8fce8a2e48c4a3f17dab3"], "PIN": ["aa3c2078f6b7f64b3f0b6f92b1d9e5c488977a2ba23181629b7794151b012d45"]}, "champ": {"qui": ["a7a832a58f92331111f095fc805c9d1b7da74f9649f4852f1fa2dd676df86a0f", "fc312941827ed30ca5197f3b9475bce5dd3bd4379788cc43e4736eec6248be76", "ef57e05d2e2a8c5dd97f20d8df5c228055f70a33b8bb827bd6cbc3e4c2149735", "b721649c7aa919b40386bda58d4ee5db110d0d4c891e53182662052131f931c7", "5d6787458124200ddd248c76ac815205d02433b6a90c2907d2feb28cc6e244d3", "fe74c5c51d2cf1985f76e7236ff64f324ee8b057818bb6b7cfdf854ec3225acc", "e2985d39062133c85a210558ede34790e807fd5d966cd15793d21002157db199", "01172bedb7ff1cdd4632b9040a8928e716bd5165b359eb5eb62483b6b98f8b99"], "quand": "5be3763de39b9dd279f5d48d6e3e76830669dd1622b8b146a91cbe1d754c28a7", "pq": "3aa64c3844ea1aa7420ab390e0d514cca70c39acd1754370cdbc25e4f7e3ae70"}, "enc": {"portes": "FcED7jfRGCtRqxkuQy8QR+1iswGllBR86Oo3dtFC5D4wHyelIL9ZmTbC2SCzeR4z32bnPCORYJBXF26JDbNv426HeNnKfUcdoM5xlTxoCcYlLxH4kLGsMikU24X/BjYhB0IlEw4SjdlMrNgLij0+jsIaYY5QNE7mBlSqlpsFzfzZxLcAAFU+mwPUNcA6/hip73TKQbYskSswk5UTtl8azFZbr7ZWwPhxs1NxEhI/fy+2DMeqpnk9/SPS3ZJb0mtRQHERMCFGHmi5Gu56gxyHgq9206uY4pv8puXqDHDz73M97LfyM5IsRf5DCy1kxJwFVZPOt/eMfLCR7pMh4C5VyOZxucqXk9u06WGmP59YTn3kt25LP75l/T6N5xf9Ls5XUYpUc2AmPkEBpuiJFFjW3ZCKUxwJQTpqnB4imcpgOkOagWLzXAHpAONDLibGFEPLaMqXVpNz9k9Cz/mSTNG/CNl69lTCwVfuQ9GHkVLqcV/yt89xuSVhIN0PeJ4QtUZCc+JGEUXrRQMSfAoJbXkCJ2PDkk7I+r4BowRKaIS23kae08ORtnUNVM7xkku5iYRdQo6w6//HrCZMc8nPnblI3ws7rqsWJzW6V73Xh1MvC2LHy/+4S8AkX2RHFJmnH7k+oe54g2cKUhWDWCbcOv2P7wtJPXE5yjGQIZwSNZPpHuGr8EPbBzHcNel9+TX3zIPWsCczuUf5Z0T/slxPaRdEi4Gv1VzFHRnypsc7VacLKROygyTDhS1WnJbj/RGyMQ1JcBQkxHmttMu3OCoRlMWTKmKrqf8INHul7SX16xmPM8O0jA9WGO4J/qRWeFEuOE+XS9MCvrSheIiVIIGetLS5vXtCFdcBchdy45mxwXY=", "tel": "306DXciqbo3xnt4MVhTmkDKhKJca4xqKfkOdz5YWW8bV/h6s4orOH328PTefYGebmgVvDApOoz8Tnfkao3ycKdIU2IO20utpP6LMsTQ5tqhhz5/173E2Vie9vTCXT3aMvpf0LypDA7IE+/XE8cPXEKWCp7oCcgyRs2/kP1hgVG7yYURcn2dq2ZlJjgEDoA/82/afwm1QDYW6LuovWkcfC9ay2csSTfnbHr6wpguKAtILgUozdwfzw3mg5IkJWMfM6sfUvcI85oCCuITHIhnhfDWJPsaXnV1LtTOtqedmG4PvpmzSowhTObQXGva2op2a4x1rrlzaRJzpWR/fsJAKo4nx0RqAavwh5JVKN2EPywDVxzK7fY38SEPVFyEYLQobZa+MjOFm8R1vWVXLwy9okCCuhTLoxOb4fGZ/sTyEKwai1XybFXzt4Qk5PvCYQRyd+TbGFrlziwnjN1MTe/llgvoRJJOjuIbdvdGgWzV3GHzangyjHqG1v/rjpii6o7Tlb999/8wRq7rfkth6BzHPSIeY4itdrd9gD1fjFmT/f/QXRYcrr19vjAcnXoez5SHS27zoJ8rKH58YmTbA0DqNyUROuK3fz0C6emObz1PerQtPB6LsbfFRmGoNG3omk140bmNZkIF7kVd8x5PqhgcPlRB+4QWVYsPisbuSF6gxqF5hW5txecYPspcx5u4gv9veq71vRrree72oodx3E6G0YQ25CEH6ei3G88P5SzNmb123eAwEvPbSTBeEUXxHrdpjvTT3js/3aaQgnjZTTfFq29CFXU70", "mc": "iEYjclnclFHWFX1DCRAHdnLfhzIQix5sfa2O/tqTHgWSJEdk5z6HCiYChylQZfMSiWX9C1av+zEIX2q1ctHlHbv55O4ja4BLlYnQ+n8W5g+qPVxv8FI6j/34k7tah59T1AcJBegrI8nv463n34x01ZO1Dilo7kk2RJPJxG6czBOpn5jatpKCmtASY7obs1Y49FjcT11XTE0v5jran9g+EUBazf01HSjWj2IwqNl8ib/jXIt8jzZ0hhI5qWjiAVGW/2pYdx23vCQjuevVM0XNT5nRqt9IJIfMRnbV0QHlTwaYhRU2Xm5tKjTxumE+sh0m3m56C2ZYzjwZpQx+jn++hvLtCX59I8KEach3h3FMfLBCa/VBaQnIXv5sIWHU5SaBxcSvP+JFFlB3c7em5Xb9gxk7y/AvM7LoZinyMLewWnJeztoXOin3espXMVA2gnkiGeMiVcO5zRZzsBttbMh6/32HV2v3sI82d+flrWuqS6FObPFH6ORinEJsqXMCJWqkcqumLrAFfnFb6jBxnluURnlaUNLaIjSNWeZndl/L7cgeM3Nf+vCFCghP2vnOKc4+7YyDrtxMN2NQlXZGtBhjbwpV0qdsZQbUouTBQB5R3vLtyal99Pod86vCFfJFcplUecUIEvlTbM/vdSI2tckw2JQ5/IxmOHjFTicB2Xe7iy/wOQZfulvJc40uiyNA", "frag": "9wA6cl010c+NHX1eQy2f9W5WM/IYBMYs/8hIkarLkkvMBtX5mBYLfXp98/x2qgDn2WF2djZlVeIrXQs+xG7G8XBzbBscElKwK8ecL9dS2QDAuosZgwWUUkqqwMObboRJ623IzEc8audIXdW9ioI7o2qSccC18Bpzb1x7MoM1/9r08wm1DdNHv11jsDVirUa6Q6Pf3P5pd8NGLsmsE4fNFD3p/srdcjRxVcLVmhOkp6Al1p9iwYPvrf9cnyGjkBSQuO1wpIKsjL7D4uHCqoQAiaErSg6PaWfah5htZ9cE0+kSCsiDWAUgHl7YqSNcAPMwYA5Z1xbz924ktpQh6DpSLU041UfF4pAZaxOBUbHRmUboG52yt4ZLayDlAlLeDwbMs3iJTSWhFHcFF3PyjZDMci1Uj9LVlKj8njPKHewv7r6shH1I09qnMphErWg8apmP1DKI6sqnfetOsY92OvebOORW+p50eV0lSyEhKAH9EclzTnhfU4g6zG9JpojRpzi6QT65pQnZQl9ffLbUz/e9eESws0KReSMvkZ6/zi6V4hhiUrFDKi+0I/PA3yl73QlZe+S+nNJPKuxiXFUQTiRBn/VT3hGSx8z+u1g/3KFgL6lh0GacgQzrvzZ6uuJlQc9ZpYUuzYSGst/gsTbdB6znx/Gon+FSxUQNULEOhtl8GxTSnOVuCysmG0t7OnKu4Mnr74bZBM3DcJYxl+o0xLxhb07m8ylZXmk=", "final": "m7uRhGet/JlXebvDgPswHd9y0qyXus8WPyHiKcw1fheXOOjO79qjqDiJROKnebSJ2Hnu/3C67FsN5bIv2e/sVVaOWbWGaU/Nbo1s5arrpH+l/ouLx51qIh544gm+WPeZ8ERoaf9Ip1tbL1gr8AFeIDDSP6r1yR83scw7NKfxJenGvCw/V1SjEKQBGEM4nVhoBWwXaR80m2RNH9UJJhgcWbJvSwtYozHPBEGVOoy2p5sq8HT+o3Ly6cU="}};
 const SEL = "belvedere-2026";
 
 /* ================= SHA-256 (sans dépendance, marche hors ligne) ================= */
@@ -260,31 +260,49 @@ const MISSIONS = [
       { id:"M4a", q:"Quel organisme classe les hôtels en France ?", type:"txt", aide:"son nom" },
       { id:"M4b", q:"Pour quels hôtels y a-t-il une « visite mystère » ?", type:"qcm", choix:[["12","Les hôtels 1 et 2 étoiles"],["3","Les hôtels 3 étoiles"],["45","Les hôtels 4 et 5 étoiles"]] }],
     aide:"Le site officiel s'appelle atout-france.fr. Une visite mystère, c'est un inspecteur qui dort à l'hôtel sans dire qui il est." },
-  { id:"M5", titre:"La nuit dernière", doc:"nuit",
-    texte:"Le veilleur de nuit a écrit dans la main courante (le cahier de l'hôtel). Lis son message, puis regarde le tableau du 2e étage.",
-    questions:[{ id:"M5", q:"Dans quelle chambre est M. Delorme maintenant ?", type:"num", aide:"un numéro" }],
-    aide:"Il faut une chambre qui est Prestige ET « libre et propre » (LP). Une seule chambre du tableau est les deux à la fois." },
-  { id:"M6", titre:"La preuve", doc:"portes",
-    texte:"Le journal des portes garde l'heure de chaque ouverture de porte.",
-    questions:[{ id:"M6", q:"À quelle heure sa nouvelle chambre a-t-elle été ouverte avec la nouvelle carte ?", type:"heure", aide:"ex. : 9 h 45" }],
-    aide:"Cherche la ligne de sa nouvelle chambre où il est écrit « nouvelle carte »." },
-  { id:"M7", titre:"Un vrai hôtel", doc:"internet", libre:true,
+  { id:"M5", titre:"Les vols", doc:"vols",
+    texte:"Depuis quelques semaines, des clients se plaignent. La réception l'a noté dans la main courante (le cahier de l'hôtel).",
+    questions:[
+      { id:"M5a", q:"Quand les vols ont-ils lieu ?", type:"qcm", choix:[["matin","Le matin, pendant le ménage"],["aprem","L'après-midi"],["nuit","La nuit, pendant que le client dort"]] },
+      { id:"M5b", q:"Comment le voleur ouvre-t-il les coffres-forts ?", type:"qcm", choix:[["force","Il les casse"],["codemaitre","Avec le code maître (le code de secours de l'hôtel)"],["carte","Avec la carte-clé du client"]] }],
+    aide:"Relis les 3 plaintes : à quel moment le client s'aperçoit du vol ? Et le coffre a-t-il été cassé ?" },
+  { id:"M6", titre:"Les badges du personnel", doc:"badges",
+    texte:"Chaque employé passe son badge quand il entre ou sort par la porte du personnel. Voici la nuit du crime.",
+    questions:[{ id:"M6", q:"À quelle heure Lucas, le barman, est-il sorti de l'hôtel ?", type:"heure", aide:"ex. : 9 h 45" }],
+    aide:"Cherche la ligne où il est écrit « L. Faure (barman) »." },
+  { id:"M7", titre:"La porte de la chambre 12", doc:"portes",
+    texte:"La serrure de chaque chambre garde en mémoire qui a ouvert la porte, et à quelle heure.",
+    questions:[
+      { id:"M7a", q:"À quelle heure la porte a-t-elle été ouverte avec un passe ?", type:"heure", aide:"ex. : 9 h 45" },
+      { id:"M7b", q:"Avec quel passe ?", type:"qcm", choix:[["etage","Le passe du 1er étage"],["gouv","Le passe général de la gouvernante"],["reception","Le passe général de la réception"]] }],
+    aide:"Une ligne parle d'un passe, les autres de la carte du client." },
+  { id:"M8", titre:"Le téléphone", doc:"tel",
+    texte:"Le standard téléphonique enregistre tous les appels de la nuit.",
+    questions:[{ id:"M8", q:"À 2 h 10, quelqu'un a-t-il répondu au téléphone de la réception ?", type:"qcm", choix:[["oui","Oui"],["non","Non"]] }],
+    aide:"Regarde la colonne « Réponse » pour l'appel de 2 h 10." },
+  { id:"M9", titre:"La main courante", doc:"mc",
+    texte:"Voici ce que le veilleur de nuit a écrit cette nuit-là dans la main courante.",
+    questions:[{ id:"M9", q:"D'après ce qu'il a écrit, que faisait le veilleur à 2 h ?", type:"qcm", choix:[["dort","Il dormait"],["ronde","Il faisait sa ronde dans les étages"],["bar","Il était au bar"]] }],
+    aide:"Lis la ligne de 2 h 00." },
+  { id:"M10", titre:"Un vrai hôtel", doc:"internet", libre:true,
     texte:"Dernière mission : cherche sur Internet un vrai hôtel 4 étoiles de ta ville (ou de Paris), puis remplis les 3 cases.",
     chercher:["hôtel 4 étoiles"],
     aide:"Ajoute le nom de ta ville dans la recherche. Le nombre de chambres est souvent sur le site de l'hôtel, à la rubrique « Chambres »." }
 ];
+// Contenus verrouillés : chacun s'ouvre avec la réponse de la mission d'avant.
+const VERROUS = { badges: null, portes: "M6", tel: "M7a", mc: "M8" };
 const NB_Q = MISSIONS.reduce((n, m) => n + (m.questions ? m.questions.length : 0), 0);
 const MAX_PTS = NB_Q + 1;
-const CHAMBRES_2 = [[21,"Classique","O",""],[22,"Prestige","O",""],[23,"Supérieure","LP",""],[24,"Supérieure","LP",""],[25,"Prestige","HS","fuite d'eau"],[26,"Classique","O",""],[27,"Prestige","LP",""],[28,"Supérieure","O",""]];
 
 /* ================= État et sauvegarde ================= */
-const CLE_STOCK = "belvedere-v2";
+const CLE_STOCK = "belvedere-v3";
 let memoire = {};
 function lireTout(){ try { const t = localStorage.getItem(CLE_STOCK); return t ? JSON.parse(t) : memoire; } catch (e) { return memoire; } }
 function ecrireTout(t){ memoire = t; try { localStorage.setItem(CLE_STOCK, JSON.stringify(t)); } catch (e) {} }
 const tout = lireTout();
-tout.reglages = tout.reglages || { duree: 35 };
-function nouvelEtat(b){ return { brigade:b, debut:null, etape:0, faits:{}, affiche:{}, essais:{}, aides:{}, libre:null, fini:false, final:null, finalEssais:0 }; }
+tout.reglages = tout.reglages || { duree: 45 };
+function nouvelEtat(b){ return { brigade:b, debut:null, etape:0, faits:{}, affiche:{}, essais:{}, aides:{}, cles:{}, libre:null, fini:false, final:null, finalEssais:0 }; }
+function ouvrir(nom, cle){ try { return dechiffrer(SECRETS.enc[nom], cle || ""); } catch (e) { return ""; } }
 let E = null;
 let vue = { ecran:"accueil", choisie:null };
 function sauver(){ if (E) tout[E.brigade] = E; ecrireTout(tout); }
@@ -328,7 +346,7 @@ function ecranAccueil(){
     <div>
       <p class="sur">Escape game · L'ordinateur</p>
       <h1>Le poste de réception</h1>
-      <p class="intro">Le client de la chambre 12 a disparu. Fouille le logiciel de l'hôtel et trouve <b>OÙ</b> il se cache.</p>
+      <p class="intro">Le client de la chambre 12 a disparu cette nuit. Du sang dans la salle de bain… Fouille le logiciel de l'hôtel : <b>qui pouvait entrer dans sa chambre ?</b></p>
       <div class="choix-brigade" role="group" aria-label="Choisis ta brigade">
         ${Object.keys(BRIGADES).map(k => `<button class="brigade" data-brigade="${k}" aria-pressed="${b === k}">${ICONES[k]}<b>${BRIGADES[k]}</b><small>${tout[k] && tout[k].debut ? "partie en cours" : "nouvelle partie"}</small></button>`).join("")}
       </div>
@@ -382,7 +400,7 @@ function formulaireLibre(){
 }
 function recompense(m){
   if (m.id === "M4") return `<div class="memo"><b>Message de la directrice, lundi :</b> « Un inspecteur va venir dormir à l'hôtel sans dire qui il est : c'est la visite mystère pour notre 5e étoile. Soyez parfaits ! »</div>`;
-  if (m.id === "M6"){ let f = ""; try { f = dechiffrer(SECRETS.enc.fragOu, E.cleM5 || ""); } catch (e) {} return f; }
+  if (m.id === "M9") return ouvrir("frag", (E.cles || {}).M9);
   return "";
 }
 
@@ -411,15 +429,28 @@ function documentMission(m){
       <dt>Prix</dt><dd>175 € la nuit, petit-déjeuner non compris</dd>
       <dt>Garantie</dt><dd>empreinte de carte bancaire (VISA)</dd>
       <dt>Remarque</dt><dd>« Il a demandé si l'hôtel visait la 5e étoile. Bizarre… »</dd>
-      <dt>Statut</dt><dd><b style="color:var(--rouge)">Parti sans rien dire ? Note pas payée.</b></dd>
+      <dt>Statut</dt><dd><b style="color:var(--rouge)">Disparu. Note pas payée. Sang trouvé dans la salle de bain.</b></dd>
     </dl></div>`;
-  if (m.doc === "nuit") return `<div class="cahier"><small>Main courante · mercredi, 6 h 10 · Bruno, veilleur de nuit</small>Le client de la 12 se plaint du bruit. Je le change de chambre : je le mets dans la seule chambre <u>Prestige</u> qui est <u>libre et propre</u> au 2e étage. Pas eu le temps de le noter dans le logiciel !</div>
-    <div class="carte"><h3 style="font-size:24px">Les chambres du 2e étage, mercredi à 6 h</h3>
-      <div class="defile" style="margin-top:10px"><table><thead><tr><th>Chambre</th><th>Type</th><th>État</th></tr></thead><tbody>
-      ${CHAMBRES_2.map(c => `<tr><td><b>${c[0]}</b></td><td>${c[1]}</td><td><span class="statut st-${c[2]}">${c[2]}</span> ${c[3] ? esc(c[3]) : ""}</td></tr>`).join("")}
-      </tbody></table></div>
-      <div class="legende"><span><span class="statut st-O">O</span> occupée</span><span><span class="statut st-LP">LP</span> libre et propre</span><span><span class="statut st-HS">HS</span> hors service</span></div></div>`;
-  if (m.doc === "portes"){ let t = ""; try { t = dechiffrer(SECRETS.enc.portes, E.cleM5 || ""); } catch (e) { t = ""; } return `<div class="carte"><h3 style="font-size:24px">Journal des portes · mercredi</h3><div class="defile" style="margin-top:10px">${t}</div></div>`; }
+  if (m.doc === "vols") return `<div class="cahier"><small>Main courante · plaintes des clients</small>
+      <p><b>Lundi 23 novembre · chambre 23.</b> Une cliente a perdu une bague dans son coffre-fort, pendant la nuit. Le coffre n'a pas été cassé.</p>
+      <p style="margin-top:8px"><b>Jeudi 26 novembre · chambre 11.</b> Un client : « On m'a pris 200 € dans mon coffre pendant que je dormais ! » Coffre pas cassé.</p>
+      <p style="margin-top:8px"><b>Samedi 5 décembre · chambre 34.</b> Une montre a disparu du coffre pendant la nuit. Coffre intact.</p>
+      <p style="margin-top:8px;font-family:var(--f-txt);font-size:16px;color:var(--encre-2)">Rappel : un coffre fermé ne s'ouvre qu'avec le code du client… ou avec le code maître de l'hôtel.</p></div>`;
+  if (m.doc === "badges") return `<div class="carte"><h3 style="font-size:24px">Badges du personnel · porte de service</h3><div class="defile" style="margin-top:10px"><table>
+      <thead><tr><th>Heure</th><th>Entrée ou sortie</th><th>Employé</th></tr></thead><tbody>
+      <tr><td>15:02</td><td>Sortie</td><td>S. Morel (gouvernante)</td></tr>
+      <tr><td>15:05</td><td>Sortie</td><td>T. Garnier (valet de chambre)</td></tr>
+      <tr><td>21:56</td><td>Entrée</td><td>B. Lefort (veilleur de nuit)</td></tr>
+      <tr><td>22:08</td><td>Sortie</td><td>K. Benali (chef de réception)</td></tr>
+      <tr><td>01:58</td><td>Sortie</td><td>L. Faure (barman)</td></tr>
+      <tr><td>06:55</td><td>Entrée</td><td>I. Roche (réceptionniste)</td></tr>
+      <tr><td>07:04</td><td>Sortie</td><td>B. Lefort (veilleur de nuit)</td></tr>
+      </tbody></table></div><p style="margin-top:10px;font-size:17px;color:var(--encre-2)">Mardi 8 → mercredi 9 décembre. Personne d'autre n'est entré ou sorti par la porte du personnel.</p></div>`;
+  if (VERROUS[m.doc] !== undefined){
+    const t = ouvrir(m.doc, (E.cles || {})[VERROUS[m.doc]]);
+    const titres = { portes:"Serrure de la chambre 12 · nuit du crime", tel:"Standard téléphonique · nuit du crime", mc:"Main courante · nuit du crime" };
+    return `<div class="carte"><h3 style="font-size:24px">${titres[m.doc]}</h3><div class="defile" style="margin-top:10px">${t}</div></div>`;
+  }
   return "";
 }
 function liensRecherche(m){
@@ -427,8 +458,7 @@ function liensRecherche(m){
   return `<div class="chercher">${m.chercher.map(q => `<a href="${google(q)}" target="_blank" rel="noopener"><b>Chercher</b><span>${esc(q)}</span></a>`).join("")}<p style="font-size:16px;color:var(--encre-2)">La recherche s'ouvre dans un nouvel onglet. Lis les résultats, puis reviens ici pour répondre.</p></div>`;
 }
 function ecranFin(){
-  let frag = "";
-  try { frag = dechiffrer(SECRETS.enc.fragOu, E.cleM5 || ""); } catch (e) {}
+  const frag = ouvrir("frag", (E.cles || {}).M9);
   return `<section class="page gutter"><div class="colonne">${etapes()}
     <div class="carte"><h1 style="font-size:40px;color:var(--vert)">Atelier terminé !</h1><p class="texte">Vous avez <b>${points(E)} points sur ${MAX_PTS}</b>${nbAides(E) ? ` et utilisé ${nbAides(E)} coup${nbAides(E) > 1 ? "s" : ""} de pouce (−1 point chacun)` : ""}. Écrivez-le dans votre carnet de bord.</p></div>
     ${frag}
@@ -439,17 +469,19 @@ function ecranRapport(){
   const f = E.final;
   let corps;
   if (f && f.ok){
-    let html = ""; try { html = dechiffrer(SECRETS.enc.final, f.cle); } catch (e) {}
-    corps = `<div class="final">${html}<p>${BRIGADES[E.brigade]} · validé à ${f.heure}</p></div>`;
+    corps = `<div class="final">${ouvrir("final", f.cle)}<p>${BRIGADES[E.brigade]} · accusation validée à ${f.heure}</p></div>`;
   } else {
     corps = `<form class="carte" id="form-rapport" autocomplete="off" style="display:grid;gap:14px">
-      <div class="question"><label class="q" for="r-qui">1. QUI ? Son vrai nom de famille</label><div class="rang"><input id="r-qui" type="text" placeholder="un nom"></div><span id="rr-qui"></span></div>
-      <div class="question"><label class="q" for="r-ou">2. OÙ ? Le numéro de sa chambre</label><div class="rang"><input id="r-ou" type="text" placeholder="un numéro"></div><span id="rr-ou"></span></div>
-      <div class="question"><label class="q" for="r-quand">3. QUAND ? L'heure du rendez-vous</label><div class="rang"><input id="r-quand" type="text" placeholder="ex. : 15 h"></div><span id="rr-quand"></span></div>
-      <div><button class="btn laiton" type="submit">Envoyer le rapport</button></div>
-      <p style="color:var(--encre-2);font-size:16px">Essais déjà faits : ${E.finalEssais}</p></form>`;
+      <div class="question"><label class="q" for="r-qui">1. QUI est le coupable ? (son prénom ou son nom)</label><div class="rang"><input id="r-qui" type="text" placeholder="un prénom ou un nom"></div><span id="rr-qui"></span></div>
+      <div class="question"><label class="q" for="r-quand">2. QUAND a eu lieu le crime ?</label><div class="rang"><input id="r-quand" type="text" placeholder="ex. : 3 h 25"></div><span id="rr-quand"></span></div>
+      <div class="question"><span class="q">3. POURQUOI ?</span><div class="qcm">
+        <label><input type="radio" name="r-pq" value="dispute"> Une dispute au bar qui a mal tourné</label>
+        <label><input type="radio" name="r-pq" value="vol"> La victime l'avait surpris en train de voler dans son coffre</label>
+        <label><input type="radio" name="r-pq" value="jaloux"> Par jalousie : la victime allait prendre sa place</label></div><span id="rr-pq"></span></div>
+      <div><button class="btn laiton" type="submit">Envoyer l'accusation</button></div>
+      <p style="color:var(--encre-2);font-size:16px">Essais déjà faits : ${E.finalEssais}. Chaque erreur compte !</p></form>`;
   }
-  return `<section class="page gutter"><div class="colonne"><div class="carte"><h1 style="font-size:38px;color:var(--nuit)">Rapport final</h1><p class="texte">À faire à la fin, quand ta brigade a ses 3 réponses : QUI, OÙ, QUAND.</p></div>${corps}</div></section>`;
+  return `<section class="page gutter"><div class="colonne"><div class="carte"><h1 style="font-size:38px;color:var(--nuit)">L'accusation</h1><p class="texte">À faire à la fin, quand ta brigade a fini les 3 ateliers et rempli son carnet.</p></div>${corps}</div></section>`;
 }
 
 /* ================= Actions ================= */
@@ -481,33 +513,31 @@ function valider(form){
     aff = form.querySelector("input").value.trim(); if (!aff){ toast("Écris une réponse", true); return; }
     brut = norme(aff, q.type);
   }
-  if (bonneReponse(q.id, brut)){ E.faits[q.id] = true; E.affiche[q.id] = aff; if (q.id === "M5") E.cleM5 = brut; sauver(); ding(true); toast("Bonne réponse : +1 point"); }
+  if (bonneReponse(q.id, brut)){ E.faits[q.id] = true; E.affiche[q.id] = aff; E.cles = E.cles || {}; E.cles[q.id] = brut; sauver(); ding(true); toast("Bonne réponse : +1 point"); }
   else { E.essais[q.id] = (E.essais[q.id] || 0) + 1; sauver(); ding(false); toast("Ce n'est pas ça", true); }
   afficher();
 }
 function candidatsQui(v){
   const s = norme(v, "txt"), out = new Set([s]);
-  ["monsieur", "mr", "m"].forEach(p => { if (s.startsWith(p)) out.add(s.slice(p.length)); });
-  Array.from(out).forEach(x => ["paul", "p"].forEach(p => { if (x.startsWith(p)) out.add(x.slice(p.length)); }));
+  ["cest", "monsieur", "mr", "m", "le"].forEach(p => { if (s.startsWith(p)) out.add(s.slice(p.length)); });
   return Array.from(out).filter(Boolean);
 }
 function validerRapport(){
-  const qui = $("#r-qui").value, ou = norme($("#r-ou").value, "num"), quand = norme($("#r-quand").value, "heureH");
-  const quiOk = candidatsQui(qui).find(c => H(SEL + "|F-qui|" + c) === SECRETS.champ.qui);
-  const ouOk = H(SEL + "|F-ou|" + ou) === SECRETS.champ.ou;
+  const quand = norme($("#r-quand").value, "heure");
+  const choix = document.querySelector('input[name="r-pq"]:checked');
+  const pq = choix ? choix.value : "";
+  const quiOk = candidatsQui($("#r-qui").value).some(c => SECRETS.champ.qui.includes(H(SEL + "|F-qui|" + c)));
   const quandOk = H(SEL + "|F-quand|" + quand) === SECRETS.champ.quand;
+  const pqOk = H(SEL + "|F-pq|" + pq) === SECRETS.champ.pq;
   E.finalEssais += 1;
-  if (quiOk && ouOk && quandOk){
-    const cle = quiOk + "|" + ou + "|" + quand;
-    if (H(SEL + "|final|" + cle) === SECRETS.final){
-      E.final = { ok:true, cle, heure: new Date().toLocaleTimeString("fr-FR", { hour:"2-digit", minute:"2-digit" }) };
-      sauver(); ding(true); afficher(); return;
-    }
+  if (quiOk && quandOk && pqOk){
+    E.final = { ok:true, cle: quand + "|" + pq, heure: new Date().toLocaleTimeString("fr-FR", { hour:"2-digit", minute:"2-digit" }) };
+    sauver(); ding(true); afficher(); return;
   }
   sauver(); ding(false);
   const marque = (id, ok) => { const el = $(id); el.textContent = ok ? "✓ Juste" : "✗ Pas encore"; el.className = ok ? "bravo-q" : "non"; };
-  marque("#rr-qui", !!quiOk); marque("#rr-ou", ouOk); marque("#rr-quand", quandOk);
-  toast("Pas encore : corrige les lignes en rouge", true);
+  marque("#rr-qui", quiOk); marque("#rr-quand", quandOk); marque("#rr-pq", pqOk);
+  toast("Pas encore : relis ton carnet", true);
 }
 
 /* ================= Chronomètre ================= */
@@ -539,7 +569,7 @@ function panneauProf(confirmer){
   $("#modal-box").innerHTML = `<h2 id="modal-titre">Espace prof</h2>
     <p>Scores enregistrés sur cet ordinateur. Coups de pouce : −1 point chacun.</p>
     <div class="defile"><table><thead><tr><th>Brigade</th><th>Points</th><th>Coups de pouce</th><th>Mission 7 (vrai hôtel)</th><th>Rapport final</th><th></th></tr></thead><tbody>${lignes}</tbody></table></div>
-    <label for="duree">Durée de l'atelier : <select id="duree" style="border:2px solid var(--trait);border-radius:8px;padding:6px">${[25, 30, 35, 40, 45].map(d => `<option value="${d}" ${tout.reglages.duree === d ? "selected" : ""}>${d} minutes</option>`).join("")}</select></label>
+    <label for="duree">Durée de l'atelier : <select id="duree" style="border:2px solid var(--trait);border-radius:8px;padding:6px">${[30, 35, 40, 45, 50, 60].map(d => `<option value="${d}" ${tout.reglages.duree === d ? "selected" : ""}>${d} minutes</option>`).join("")}</select></label>
     ${confirmer ? `<div class="aide">Effacer la partie de la ${BRIGADES[confirmer]} sur cet ordinateur ? <button class="btn petit" id="oui">Oui, effacer</button> <button class="btn petit contour" id="non">Annuler</button></div>` : ""}
     <button class="btn petit contour" id="fermer">Fermer</button>`;
   $("#fermer").addEventListener("click", () => { fermer(); afficher(); });
